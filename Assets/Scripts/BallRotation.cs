@@ -1,6 +1,3 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class BallRotation : MonoBehaviour
@@ -13,21 +10,21 @@ public class BallRotation : MonoBehaviour
     void Update()
     {
         gameStarted = GameManager.gameStarted;
-        BallRotate();
+        if (gameStarted)
+        {
+            BallRotate(); 
+        }
     }
 
     private void BallRotate()
     {
-        if (gameStarted)
-        {
-            transform.Rotate(Vector3.right, rotationSpeed);
-            RotationSpeedController();
-        }
+        transform.Rotate(Vector3.right, rotationSpeed);
+        RotationSpeedController();
     }
 
     private void RotationSpeedController()
     {
-        rotationSpeed = BallMovement.speedCoef;
+        rotationSpeed = BallMovement.ballSpeed;
     }
 }
 

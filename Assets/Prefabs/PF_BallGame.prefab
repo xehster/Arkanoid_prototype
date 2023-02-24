@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 5134596552043241679}
   - component: {fileID: 5134596552043241678}
   - component: {fileID: 5134596552043241677}
-  - component: {fileID: 5134596552043241676}
   - component: {fileID: 5134596552043241672}
   m_Layer: 0
   m_Name: Ball
@@ -85,19 +84,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!135 &5134596552043241676
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5134596552043241667}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &5134596552043241672
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -173,12 +159,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 85339c218af8d4b5793b9a99e0998e54, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speedCoef: 10
-  randomDirectionZ: 0
-  randomDirectionX: 0
   GameManager: {fileID: 0}
-  gameStarted: 0
   firstStart: 0
+  speedCoef: 10
+  maxAngle: 90
+  rigidBody: {fileID: 5134596553492577363}
 --- !u!54 &5134596553492577363
 Rigidbody:
   m_ObjectHideFlags: 0

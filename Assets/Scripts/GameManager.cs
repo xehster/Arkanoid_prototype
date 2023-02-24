@@ -7,14 +7,28 @@ public class GameManager : MonoBehaviour
 {
     public bool gameStarted = false;
     public bool firstStart;
-    public void OnMouseDown()
+    
+    public void MouseClicked()
     {
-        gameStarted = true;
-        firstStart = true;
+        if (Input.GetMouseButtonDown(0) || Input.GetMouseButtonDown(1))
+        {
+            gameStarted = true;
+            firstStart = true;
+        }
+    }
+    
+    
+    public void MouseUnclicked()
+    {
+        if (Input.GetMouseButtonUp(0) || Input.GetMouseButtonUp(1))
+        {
+            firstStart = false; //не добавляю gameStarted = false для удобства дебага чтобы всегда можно было заново запустить шарик кликом мыши
+        }
     }
 
-    public void OnMouseUp()
+    private void Update()
     {
-        firstStart = false;
+        MouseClicked();
+        MouseUnclicked();
     }
 }
